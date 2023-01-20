@@ -28,7 +28,7 @@ let getbase = () => {
 }
 
 let openfluid = () => {
-  window.open('https://player.aridjaya.com/video/fluid.html?id=' + base)
+  window.open('https://player.indonesiya.com/video/fluid.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
@@ -37,12 +37,12 @@ let pmsg = 'Copy Embed Code';
 let embedfluid = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/fluid.html?id=${base}" 
+src="https://player.indonesiya.com/video/fluid.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
 }
 
 let iframe = () => {
-  s('fluid').src = 'https://player.aridjaya.com/video/fluid.html?id=' + base;
+  s('fluid').src = 'https://player.indonesiya.com/video/fluid.html?id=' + base;
 }

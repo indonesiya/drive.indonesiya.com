@@ -29,7 +29,7 @@ let getbase = () => {
 
 //Player Openers (diff. func. coding intentionally)
 let openplyr = () => {
-  window.open('https://player.aridjaya.com/video/plyr.html?id=' + base)
+  window.open('https://player.indonesiya.com/video/plyr.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
@@ -37,12 +37,12 @@ let pmsg = 'Copy Embed Code';
 let embedplyr = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/plyr.html?id=${base}" 
+src="https://player.indonesiya.com/video/plyr.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
 }
 
 let iframe = () => {
-  s('plyr').src = 'https://player.aridjaya.com/video/plyr.html?id=' + base;
+  s('plyr').src = 'https://player.indonesiya.com/video/plyr.html?id=' + base;
 }

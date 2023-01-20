@@ -29,7 +29,7 @@ let getbase = () => {
 
 //Player Openers (diff. func. coding intentionally)
 let openvlitejs = () => {
-  window.open('https://player.aridjaya.com/video/vlitejs.html?id=' + base)
+  window.open('https://player.indonesiya.com/video/vlitejs.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
@@ -37,13 +37,13 @@ let pmsg = 'Copy Embed Code';
 let embedvlitejs = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/vlitejs.html?id=${base}" 
+src="https://player.indonesiya.com/video/vlitejs.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`);
 }
 
 let iframe = () => {
-  s('vlitejs').src = 'https://player.aridjaya.com/video/vlitejs.html?id=' + base;
+  s('vlitejs').src = 'https://player.indonesiya.com/video/vlitejs.html?id=' + base;
 }
 

@@ -7,42 +7,24 @@
 </style>
 
 <video class="afterglow" id="myvideo" width="1280" height="720" data-skin="dark"
-  poster="https://player.aridjaya.com/assets/img/sample.jpg">
+  poster="https://player.indonesiya.com/assets/img/sample.jpg">
   <source type="video/mp4" src="/assets/video/caminandes.mp4" />
 </video>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 <script>
-  var _0x5a97 = [
-    "\x41\x49\x7A\x61\x53\x79\x44\x33\x76\x49\x6B\x67\x43\x7A\x35\x4A\x5A\x6E\x31\x35\x68\x63\x39\x52\x77\x32\x52\x48\x49\x36\x38\x47\x6B\x67\x4C\x7A\x2D\x61\x38",
-    "\x68\x72\x65\x66", "\x6C\x6F\x63\x61\x74\x69\x6F\x6E", "\x67\x65\x74",
-    "\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61\x6D\x73", "\x6D\x79\x76\x69\x64\x65\x6F",
-    "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64", "\x69\x64", "\x70\x61\x72\x73\x65", "\x73\x72\x63",
-    "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x67\x6F\x6F\x67\x6C\x65\x61\x70\x69\x73\x2E\x63\x6F\x6D\x2F\x64\x72\x69\x76\x65\x2F\x76\x33\x2F\x66\x69\x6C\x65\x73\x2F",
-    "\x3F\x61\x6C\x74\x3D\x6D\x65\x64\x69\x61\x26\x6B\x65\x79\x3D", "", "\x70\x6F\x73\x74\x65\x72",
-    "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6C\x68\x33\x2E\x67\x6F\x6F\x67\x6C\x65\x75\x73\x65\x72\x63\x6F\x6E\x74\x65\x6E\x74\x2E\x63\x6F\x6D\x2F\x64\x2F"
-  ];
-  var _0xa936 = [_0x5a97[0], _0x5a97[1], _0x5a97[2], _0x5a97[3], _0x5a97[4], _0x5a97[5], _0x5a97[6], _0x5a97[7],
-    _0x5a97[8], _0x5a97[9], _0x5a97[10], _0x5a97[11], _0x5a97[12], _0x5a97[13], _0x5a97[14]
-  ];
-  var _0x72d9 = [_0xa936[0], _0xa936[1], _0xa936[2], _0xa936[3], _0xa936[4], _0xa936[5], _0xa936[6], _0xa936[7],
-    _0xa936[8], _0xa936[9], _0xa936[10], _0xa936[11], _0xa936[12], _0xa936[13], _0xa936[14]
-  ];
-  let apikey = _0x72d9[0];
+  /*! script */
+  let apikey = 'AIzaSyCHWUFpWNS0hedAsA1Rx1Yunp_CfrbWVvs';
 
-  function getparam(_0x6561x5, _0x6561x6) {
-    return _0x6561x6 || (_0x6561x6 = window[_0x72d9[2]][_0x72d9[1]]), new URL(_0x6561x6)[_0x72d9[4]][_0x72d9[3]](
-      _0x6561x5)
+  function getparam(a, e) {
+    return e || (e = window.location.href), new URL(e).searchParams.get(a)
   }
-  let video = document[_0x72d9[6]](_0x72d9[5]);
-  if (getparam(_0x72d9[7])) {
-    let json = JSON[_0x72d9[8]](atob(getparam(_0x72d9[7])));
-    let driveid = json[_0x72d9[7]];
-    video[_0x72d9[9]] =
-      `${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}${_0x72d9[10]}${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}${driveid}${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}${_0x72d9[11]}${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}${apikey}${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}${_0x72d9[12]}${_0x5a97[12]}${_0xa936[12]}${_0x5a97[12]}`;
-    video[_0x72d9[13]] = _0x72d9[14] + driveid
+
+  let video = document.getElementById('myvideo');
+  if (getparam('id')) {
+    let json = JSON.parse(atob(getparam('id')));
+    let driveid = json.id;
+    video.src = `https://www.googleapis.com/drive/v3/files/${driveid }?alt=media&key=${apikey}`;
+    video.poster = 'https://lh3.googleusercontent.com/d/' + driveid;
   }
 </script>
-
-<script type='text/javascript' src='//deeperregardingcontend.com/bc/d8/a8/bcd8a84537fb752bf2edb073e7833d17.js'></script>
-<script type='text/javascript' src='//deeperregardingcontend.com/77/9d/18/779d18967e81f4574ca881cb9f970bf6.js'></script>
