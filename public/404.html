@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html itemscope itemtype="https://schema.org/WebSite" dir="ltr" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <base target="_top">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="width=device-width, minimum-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta name="theme-color" content="#4285F4" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@GoogleTrends" />
+  <meta property="og:title" content="Google Trends" />
+  <meta property="og:image" content="null" />
+  <meta property="og:image:width" content="128" />
+  <meta property="og:image:height" content="128" />
+  <meta property="og:site_name" content="Google Trends" />
+  <link rel="icon" href="https://ssl.gstatic.com/trends_nrtr/3045_RC01/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'
+    type='text/css' />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'
+    integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' rel='stylesheet' />
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <title>Trends</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Definição das cores */
+    body {
+      /* cores de texto */
+      --text-white: #ffffff;
+      --text-dark: #142136;
+
+      /* cores de fundo */
+      --bg-grey-light: #f5f5f5;
+      --bg-white: #ffffff;
+      --bg-blue-dark: #142136;
+      --bg-indigo: #6366f1;
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+      line-height: 1.7;
+      background-color: var(--bg-grey-light);
+    }
+
+    .dark {
+      --text-white: #e6e6e6;
+      --text-dark: #ffffff;
+      --bg-grey-light: #142136;
+      --bg-white: #22395d;
+      --bg-blue-dark: #142136;
+      --bg-indigo: #7577e1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    .text-wrapper {
+      width: 100%;
+      padding: 15px 20px;
+      background-color: var(--bg-white);
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+
+    .text-wrapper a {
+      font-size: 20px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .text-wrapper a:hover {
+      color: var(--bs-blue);
+    }
+
+    .heading {
+      letter-spacing: 1px;
+      font-weight: 900;
+      margin-bottom: 40px;
+      color: var(--text-dark);
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      width: 200px;
+      padding: 5px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      cursor: pointer;
+      background-color: var(--bg-indigo);
+      color: var(--text-white);
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+
+    .item-inner {
+      padding-left: 16px;
+    }
+
+
+    .item-inner a {
+      color: #212121;
+      font-weight: 500;
+      min-width: 0;
+      -webkit-box-flex: 1;
+      -webkit-flex-shrink: 1;
+      -ms-flex: 0 1 auto;
+      flex-shrink: 1;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px auto 0;
+      font-size: 14px;
+      color: #22395d;
+      text-decoration: none;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    footer i {
+      color: red;
+      margin: auto 5px;
+    }
+  </style>
+  <script>
+    /* recent post */
+    var _0x3dad = ["\x65\x6E\x74\x72\x79", "\x66\x65\x65\x64", "\x24\x74", "\x74\x69\x74\x6C\x65",
+      "\x6C\x65\x6E\x67\x74\x68", "\x6C\x69\x6E\x6B", "\x61\x6C\x74\x65\x72\x6E\x61\x74\x65", "\x72\x65\x6C",
+      "\x68\x72\x65\x66", "\x70\x75\x62\x6C\x69\x73\x68\x65\x64", "\x73\x75\x62\x73\x74\x72\x69\x6E\x67",
+      "\x4A\x61\x6E", "\x46\x65\x62", "\x4D\x61\x72", "\x41\x70\x72", "\x4D\x61\x79", "\x4A\x75\x6E",
+      "\x4A\x75\x6C", "\x41\x75\x67", "\x53\x65\x70", "\x4F\x63\x74", "\x4E\x6F\x76", "\x44\x65\x63", "",
+      "\x77\x72\x69\x74\x65",
+      "\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x65\x78\x74\x2D\x77\x72\x61\x70\x70\x65\x72\x22\x3E",
+      "\x20\x2D\x20", "\x20", "\x3C\x2F\x64\x69\x76\x3E",
+      "\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x62\x62\x77\x69\x64\x67\x65\x74\x66\x6F\x6F\x74\x65\x72\x22\x3E",
+      "\x2F\x64\x69\x76", "\x6B\x65\x79\x64\x6F\x77\x6E", "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64",
+      "\x74\x61\x72\x67\x65\x74", "\x73\x74\x72\x69\x6E\x67",
+      "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
+      "\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65", "\x65\x76\x65\x6E\x74",
+      "\x64\x69\x73\x61\x62\x6C\x65\x5F\x69\x6E\x5F\x69\x6E\x70\x75\x74",
+      "\x73\x72\x63\x45\x6C\x65\x6D\x65\x6E\x74", "\x6E\x6F\x64\x65\x54\x79\x70\x65",
+      "\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65", "\x49\x4E\x50\x55\x54", "\x74\x61\x67\x4E\x61\x6D\x65",
+      "\x54\x45\x58\x54\x41\x52\x45\x41", "\x6B\x65\x79\x43\x6F\x64\x65", "\x77\x68\x69\x63\x68",
+      "\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65", "\x2C", "\x2E", "\x2B", "\x73\x70\x6C\x69\x74",
+      "\x7E", "\x21", "\x40", "\x23", "\x24", "\x25", "\x5E", "\x26", "\x2A", "\x28", "\x29", "\x5F", "\x3A",
+      "\x22", "\x3C", "\x3E", "\x3F", "\x7C", "\x63\x74\x72\x6C\x4B\x65\x79",
+      "\x73\x68\x69\x66\x74\x4B\x65\x79", "\x61\x6C\x74\x4B\x65\x79", "\x6D\x65\x74\x61\x4B\x65\x79",
+      "\x63\x74\x72\x6C", "\x63\x6F\x6E\x74\x72\x6F\x6C", "\x73\x68\x69\x66\x74", "\x61\x6C\x74",
+      "\x6D\x65\x74\x61", "\x6B\x65\x79\x63\x6F\x64\x65", "\x70\x72\x6F\x70\x61\x67\x61\x74\x65",
+      "\x63\x61\x6E\x63\x65\x6C\x42\x75\x62\x62\x6C\x65", "\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65",
+      "\x73\x74\x6F\x70\x50\x72\x6F\x70\x61\x67\x61\x74\x69\x6F\x6E",
+      "\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74",
+      "\x61\x6C\x6C\x5F\x73\x68\x6F\x72\x74\x63\x75\x74\x73", "\x74\x79\x70\x65",
+      "\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72",
+      "\x61\x74\x74\x61\x63\x68\x45\x76\x65\x6E\x74", "\x6F\x6E", "\x63\x61\x6C\x6C\x62\x61\x63\x6B",
+      "\x64\x65\x74\x61\x63\x68\x45\x76\x65\x6E\x74",
+      "\x72\x65\x6D\x6F\x76\x65\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72",
+      "\x43\x74\x72\x6C\x2B\x55",
+      "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x67\x6F\x6F\x67\x6C\x65\x2E\x63\x6F\x6D\x2F\x75\x72\x6C\x3F\x71\x3D\x68\x74\x74\x70\x73\x25\x33\x41\x25\x32\x46\x25\x32\x46\x70\x65\x6A\x75\x61\x6E\x67\x70\x72\x61\x6D\x75\x6B\x61\x2E\x62\x6C\x6F\x67\x73\x70\x6F\x74\x2E\x63\x6F\x6D\x25\x32\x46\x26\x73\x61\x3D\x44\x26\x73\x6E\x74\x7A\x3D\x31\x26\x75\x73\x67\x3D\x41\x4F\x76\x56\x61\x77\x31\x4F\x34\x67\x59\x41\x39\x4B\x68\x66\x6C\x6A\x5F\x4A\x62\x43\x71\x62\x70\x6C\x4E\x49",
+      "\x72\x65\x70\x6C\x61\x63\x65", "\x61\x64\x64", "\x70\x61\x74\x68\x6E\x61\x6D\x65",
+      "\x23\x21\x2F\x68\x69\x73\x74\x6F\x72\x79", "\x72\x65\x70\x6C\x61\x63\x65\x53\x74\x61\x74\x65",
+      "\x70\x75\x73\x68\x53\x74\x61\x74\x65", "\x70\x6F\x70\x73\x74\x61\x74\x65", "\x68\x61\x73\x68",
+      "\x67\x65\x74\x53\x65\x6C\x65\x63\x74\x69\x6F\x6E",
+      "\x20\x52\x65\x61\x64\x20\x6D\x6F\x72\x65\x20\x3A\x20", "\x6C\x6F\x63\x61\x74\x69\x6F\x6E",
+      "\x64\x69\x76", "\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74",
+      "\x70\x6F\x73\x69\x74\x69\x6F\x6E", "\x73\x74\x79\x6C\x65", "\x61\x62\x73\x6F\x6C\x75\x74\x65",
+      "\x6C\x65\x66\x74", "\x2D\x39\x39\x39\x39\x39\x70\x78", "\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64",
+      "\x62\x6F\x64\x79", "\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C",
+      "\x73\x65\x6C\x65\x63\x74\x41\x6C\x6C\x43\x68\x69\x6C\x64\x72\x65\x6E",
+      "\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64", "\x73\x65\x74\x54\x69\x6D\x65\x6F\x75\x74",
+      "\x63\x6F\x70\x79", "\x64\x65\x62\x75\x67\x67\x65\x72", "\x63\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"
+    ];
+    var _0xb046 = [_0x3dad[0], _0x3dad[1], _0x3dad[2], _0x3dad[3], _0x3dad[4], _0x3dad[5], _0x3dad[6], _0x3dad[7],
+      _0x3dad[8], _0x3dad[9], _0x3dad[10], _0x3dad[11], _0x3dad[12], _0x3dad[13], _0x3dad[14], _0x3dad[15],
+      _0x3dad[16], _0x3dad[17], _0x3dad[18], _0x3dad[19], _0x3dad[20], _0x3dad[21], _0x3dad[22], _0x3dad[23],
+      _0x3dad[24], _0x3dad[25], _0x3dad[26], _0x3dad[27], _0x3dad[28], _0x3dad[29], _0x3dad[30], _0x3dad[31],
+      _0x3dad[32], _0x3dad[33], _0x3dad[34], _0x3dad[35], _0x3dad[36], _0x3dad[37], _0x3dad[38], _0x3dad[39],
+      _0x3dad[40], _0x3dad[41], _0x3dad[42], _0x3dad[43], _0x3dad[44], _0x3dad[45], _0x3dad[46], _0x3dad[47],
+      _0x3dad[48], _0x3dad[49], _0x3dad[50], _0x3dad[51], _0x3dad[52], _0x3dad[53], _0x3dad[54], _0x3dad[55],
+      _0x3dad[56], _0x3dad[57], _0x3dad[58], _0x3dad[59], _0x3dad[60], _0x3dad[61], _0x3dad[62], _0x3dad[63],
+      _0x3dad[64], _0x3dad[65], _0x3dad[66], _0x3dad[67], _0x3dad[68], _0x3dad[69], _0x3dad[70], _0x3dad[71],
+      _0x3dad[72], _0x3dad[73], _0x3dad[74], _0x3dad[75], _0x3dad[76], _0x3dad[77], _0x3dad[78], _0x3dad[79],
+      _0x3dad[80], _0x3dad[81], _0x3dad[82], _0x3dad[83], _0x3dad[84], _0x3dad[85], _0x3dad[86], _0x3dad[87],
+      _0x3dad[88], _0x3dad[89], _0x3dad[90], _0x3dad[91], _0x3dad[92], _0x3dad[93], _0x3dad[94], _0x3dad[95],
+      _0x3dad[96], _0x3dad[97], _0x3dad[98], _0x3dad[99], _0x3dad[100], _0x3dad[101], _0x3dad[102], _0x3dad[
+        103], _0x3dad[104], _0x3dad[105], _0x3dad[106], _0x3dad[107], _0x3dad[108], _0x3dad[109], _0x3dad[
+        110], _0x3dad[111], _0x3dad[112], _0x3dad[113], _0x3dad[114], _0x3dad[115], _0x3dad[116], _0x3dad[
+        117], _0x3dad[118], _0x3dad[119], _0x3dad[120], _0x3dad[121]
+    ];
+    var _0x1ee1 = [_0xb046[0], _0xb046[1], _0xb046[2], _0xb046[3], _0xb046[4], _0xb046[5], _0xb046[6], _0xb046[7],
+      _0xb046[8], _0xb046[9], _0xb046[10], _0xb046[11], _0xb046[12], _0xb046[13], _0xb046[14], _0xb046[15],
+      _0xb046[16], _0xb046[17], _0xb046[18], _0xb046[19], _0xb046[20], _0xb046[21], _0xb046[22], _0xb046[23],
+      _0xb046[24], _0xb046[25], _0xb046[26], _0xb046[27], _0xb046[28], _0xb046[29], _0xb046[30], _0xb046[31],
+      _0xb046[32], _0xb046[33], _0xb046[34], _0xb046[35], _0xb046[36], _0xb046[37], _0xb046[38], _0xb046[39],
+      _0xb046[40], _0xb046[41], _0xb046[42], _0xb046[43], _0xb046[44], _0xb046[45], _0xb046[46], _0xb046[47],
+      _0xb046[48], _0xb046[49], _0xb046[50], _0xb046[51], _0xb046[52], _0xb046[53], _0xb046[54], _0xb046[55],
+      _0xb046[56], _0xb046[57], _0xb046[58], _0xb046[59], _0xb046[60], _0xb046[61], _0xb046[62], _0xb046[63],
+      _0xb046[64], _0xb046[65], _0xb046[66], _0xb046[67], _0xb046[68], _0xb046[69], _0xb046[70], _0xb046[71],
+      _0xb046[72], _0xb046[73], _0xb046[74], _0xb046[75], _0xb046[76], _0xb046[77], _0xb046[78], _0xb046[79],
+      _0xb046[80], _0xb046[81], _0xb046[82], _0xb046[83], _0xb046[84], _0xb046[85], _0xb046[86], _0xb046[87],
+      _0xb046[88], _0xb046[89], _0xb046[90], _0xb046[91], _0xb046[92], _0xb046[93], _0xb046[94], _0xb046[95],
+      _0xb046[96], _0xb046[97], _0xb046[98], _0xb046[99], _0xb046[100], _0xb046[101], _0xb046[102], _0xb046[
+        103], _0xb046[104], _0xb046[105], _0xb046[106], _0xb046[107], _0xb046[108], _0xb046[109], _0xb046[
+        110], _0xb046[111], _0xb046[112], _0xb046[113], _0xb046[114], _0xb046[115], _0xb046[116], _0xb046[
+        117], _0xb046[118], _0xb046[119], _0xb046[120], _0xb046[121]
+    ];
+
+    function showrecentposts(t) {
+      for (var _0xef38x5 = 0; _0xef38x5 < numposts; _0xef38x5++) {
+        var _0xef38x6, _0xef38x7 = t[_0x1ee1[1]][_0x1ee1[0]][_0xef38x5],
+          _0xef38x8 = _0xef38x7[_0x1ee1[3]][_0x1ee1[2]];
+        if (_0xef38x5 == t[_0x1ee1[1]][_0x1ee1[0]][_0x1ee1[4]]) {
+          break
+        };
+        for (var _0xef38x9 = 0; _0xef38x9 < _0xef38x7[_0x1ee1[5]][_0x1ee1[4]]; _0xef38x9++) {
+          if (_0x1ee1[6] == _0xef38x7[_0x1ee1[5]][_0xef38x9][_0x1ee1[7]]) {
+            _0xef38x6 = _0xef38x7[_0x1ee1[5]][_0xef38x9][_0x1ee1[8]];
+            break
+          }
+        };
+        _0xef38x8 = _0xef38x8[_0x1ee1[5]](_0xef38x6);
+        var _0xef38xa = _0xef38x7[_0x1ee1[9]][_0x1ee1[2]],
+          _0xef38xb = _0xef38xa[_0x1ee1[10]](0, 4),
+          _0xef38xc = _0xef38xa[_0x1ee1[10]](5, 7),
+          _0xef38xd = _0xef38xa[_0x1ee1[10]](8, 10),
+          _0xef38xe = new Array;
+        _0xef38xe[1] = _0x1ee1[11], _0xef38xe[2] = _0x1ee1[12], _0xef38xe[3] = _0x1ee1[13], _0xef38xe[4] =
+          _0x1ee1[14], _0xef38xe[5] = _0x1ee1[15], _0xef38xe[6] = _0x1ee1[16], _0xef38xe[7] = _0x1ee1[17],
+          _0xef38xe[8] = _0x1ee1[18], _0xef38xe[9] = _0x1ee1[19], _0xef38xe[10] = _0x1ee1[20], _0xef38xe[11] =
+          _0x1ee1[21], _0xef38xe[12] = _0x1ee1[22], standardstyling || document[_0x1ee1[24]](_0x1ee1[23]),
+          document[_0x1ee1[24]](_0x1ee1[25]), standardstyling && document[_0x1ee1[24]](_0x1ee1[23]), document[
+            _0x1ee1[24]](_0xef38x8), standardstyling && document[_0x1ee1[24]](_0x1ee1[23]), 1 ==
+          showpostdate && document[_0x1ee1[24]](_0x1ee1[26] + _0xef38xd + _0x1ee1[27] + _0xef38xe[parseInt(
+            _0xef38xc, 10)] + _0x1ee1[27] + _0xef38xb), standardstyling || document[_0x1ee1[24]](_0x1ee1[
+            28]), document[_0x1ee1[24]](_0x1ee1[28]), standardstyling && document[_0x1ee1[24]](_0x1ee1[23])
+      };
+      standardstyling || document[_0x1ee1[24]](_0x1ee1[29]), standardstyling && document[_0x1ee1[24]](_0x1ee1[
+        23]), document[_0x1ee1[24]](_0x1ee1[23]), standardstyling || document[_0x1ee1[24]](_0x1ee1[30])
+    }
+    var numposts = 5;
+    var showpostdate = false;
+    var standardstyling = true;
+    shortcut = {
+      all_shortcuts: {},
+      add: function (_0xef38xb, _0xef38x12, _0xef38x13) {
+        var _0xef38x9 = {
+          type: _0x1ee1[31],
+          propagate: !1,
+          disable_in_input: !1,
+          target: document,
+          keycode: !1
+        };
+        if (_0xef38x13) {
+          for (var _0xef38x5 in _0xef38x9) {
+            _0x1ee1[32] == typeof _0xef38x13[_0xef38x5] && (_0xef38x13[_0xef38x5] = _0xef38x9[
+              _0xef38x5])
+          }
+        } else {
+          _0xef38x13 = _0xef38x9
+        };
+        _0xef38x9 = _0xef38x13[_0x1ee1[33]], _0x1ee1[34] == typeof _0xef38x13[_0x1ee1[33]] && (
+            _0xef38x9 = document[_0x1ee1[35]](_0xef38x13[_0x1ee1[33]])), _0xef38xb = _0xef38xb[
+            _0x1ee1[36]](), _0xef38x5 = function (_0xef38x9) {
+            _0xef38x9 = _0xef38x9 || window[_0x1ee1[37]];
+            if (_0xef38x13[_0x1ee1[38]]) {
+              var _0xef38x5;
+              _0xef38x9[_0x1ee1[33]] ? _0xef38x5 = _0xef38x9[_0x1ee1[33]] : _0xef38x9[_0x1ee1[
+                39]] && (_0xef38x5 = _0xef38x9[_0x1ee1[39]]), 3 == _0xef38x5[_0x1ee1[40]] && (
+                _0xef38x5 = _0xef38x5[_0x1ee1[41]]);
+              if (_0x1ee1[42] == _0xef38x5[_0x1ee1[43]] || _0x1ee1[44] == _0xef38x5[_0x1ee1[
+                  43]]) {
+                return
+              }
+            };
+            _0xef38x9[_0x1ee1[45]] ? code = _0xef38x9[_0x1ee1[45]] : _0xef38x9[_0x1ee1[46]] && (
+              code = _0xef38x9[_0x1ee1[46]]), _0xef38x5 = String[_0x1ee1[47]](code)[_0x1ee1[
+              36]](), 188 == code && (_0xef38x5 = _0x1ee1[48]), 190 == code && (_0xef38x5 =
+              _0x1ee1[49]);
+            var _0xef38x14 = _0xef38xb[_0x1ee1[51]](_0x1ee1[50]),
+              _0xef38x15 = 0,
+              _0xef38x16 = {
+                "\x60": _0x1ee1[52],
+                1: _0x1ee1[53],
+                2: _0x1ee1[54],
+                3: _0x1ee1[55],
+                4: _0x1ee1[56],
+                5: _0x1ee1[57],
+                6: _0x1ee1[58],
+                7: _0x1ee1[59],
+                8: _0x1ee1[60],
+                9: _0x1ee1[61],
+                0: _0x1ee1[62],
+                "\x2D": _0x1ee1[63],
+                "\x3D": _0x1ee1[50],
+                "\x3B": _0x1ee1[64],
+                "\x27": _0x1ee1[65],
+                "\x2C": _0x1ee1[66],
+                "\x2E": _0x1ee1[67],
+                "\x2F": _0x1ee1[68],
+                "\x5C": _0x1ee1[69]
+              },
+              _0xef38x8 = {
+                esc: 27,
+                escape: 27,
+                tab: 9,
+                space: 32,
+                "\x72\x65\x74\x75\x72\x6E": 13,
+                enter: 13,
+                backspace: 8,
+                scrolllock: 145,
+                scroll_lock: 145,
+                scroll: 145,
+                capslock: 20,
+                caps_lock: 20,
+                caps: 20,
+                numlock: 144,
+                num_lock: 144,
+                num: 144,
+                pause: 19,
+                "\x62\x72\x65\x61\x6B": 19,
+                insert: 45,
+                home: 36,
+                "\x64\x65\x6C\x65\x74\x65": 46,
+                end: 35,
+                pageup: 33,
+                page_up: 33,
+                pu: 33,
+                pagedown: 34,
+                page_down: 34,
+                pd: 34,
+                left: 37,
+                up: 38,
+                right: 39,
+                down: 40,
+                f1: 112,
+                f2: 113,
+                f3: 114,
+                f4: 115,
+                f5: 116,
+                f6: 117,
+                f7: 118,
+                f8: 119,
+                f9: 120,
+                f10: 121,
+                f11: 122,
+                f12: 123
+              },
+              _0xef38x17 = !1,
+              _0xef38xd = !1,
+              _0xef38x18 = !1,
+              _0xef38x6 = !1,
+              _0xef38xc = !1,
+              _0xef38x19 = !1,
+              _0xef38x1a = !1,
+              _0xef38x7 = !1;
+            _0xef38x9[_0x1ee1[70]] && (_0xef38x6 = !0), _0xef38x9[_0x1ee1[71]] && (_0xef38xd = !0),
+              _0xef38x9[_0x1ee1[72]] && (_0xef38x19 = !0), _0xef38x9[_0x1ee1[73]] && (
+                _0xef38x7 = !0);
+            for (var _0xef38xa = 0; k = _0xef38x14[_0xef38xa], _0xef38xa < _0xef38x14[_0x1ee1[
+                4]]; _0xef38xa++) {
+              _0x1ee1[74] == k || _0x1ee1[75] == k ? (_0xef38x15++, _0xef38x18 = !0) : _0x1ee1[
+                  76] == k ? (_0xef38x15++, _0xef38x17 = !0) : _0x1ee1[77] == k ? (_0xef38x15++,
+                  _0xef38xc = !0) : _0x1ee1[78] == k ? (_0xef38x15++, _0xef38x1a = !0) : 1 <
+                k[_0x1ee1[4]] ? _0xef38x8[k] == code && _0xef38x15++ : _0xef38x13[_0x1ee1[79]] ?
+                _0xef38x13[_0x1ee1[79]] == code && _0xef38x15++ : _0xef38x5 == k ? _0xef38x15++
+                :
+                _0xef38x16[_0xef38x5] && _0xef38x9[_0x1ee1[71]] && (_0xef38x5 = _0xef38x16[
+                  _0xef38x5], _0xef38x5 == k && _0xef38x15++)
+            };
+            if (_0xef38x15 == _0xef38x14[_0x1ee1[4]] && _0xef38x6 == _0xef38x18 && _0xef38xd ==
+              _0xef38x17 && _0xef38x19 == _0xef38xc && _0xef38x7 == _0xef38x1a && (_0xef38x12(
+                _0xef38x9), !_0xef38x13[_0x1ee1[80]])) {
+              return _0xef38x9[_0x1ee1[81]] = !0, _0xef38x9[_0x1ee1[82]] = !1, _0xef38x9[_0x1ee1[
+                83]] && (_0xef38x9[_0x1ee1[83]](), _0xef38x9[_0x1ee1[84]]()), !1
+            }
+          }, this[_0x1ee1[85]][_0xef38xb] = {
+            callback: _0xef38x5,
+            target: _0xef38x9,
+            event: _0xef38x13[_0x1ee1[86]]
+          }, _0xef38x9[_0x1ee1[87]] ? _0xef38x9[_0x1ee1[87]](_0xef38x13[_0x1ee1[86]], _0xef38x5, !1) :
+          _0xef38x9[_0x1ee1[88]] ? _0xef38x9[_0x1ee1[88]](_0x1ee1[89] + _0xef38x13[_0x1ee1[86]],
+            _0xef38x5) : _0xef38x9[_0x1ee1[89] + _0xef38x13[_0x1ee1[86]]] = _0xef38x5
+      },
+      remove: function (_0xef38xb) {
+        var _0xef38xb = _0xef38xb[_0x1ee1[36]](),
+          _0xef38x12 = this[_0x1ee1[85]][_0xef38xb];
+        delete this[_0x1ee1[85]][_0xef38xb];
+        if (_0xef38x12) {
+          var _0xef38xb = _0xef38x12[_0x1ee1[37]],
+            _0xef38x13 = _0xef38x12[_0x1ee1[33]],
+            _0xef38x12 = _0xef38x12[_0x1ee1[90]];
+          _0xef38x13[_0x1ee1[91]] ? _0xef38x13[_0x1ee1[91]](_0x1ee1[89] + _0xef38xb, _0xef38x12) :
+            _0xef38x13[_0x1ee1[92]] ? _0xef38x13[_0x1ee1[92]](_0xef38xb, _0xef38x12, !1) :
+            _0xef38x13[_0x1ee1[89] + _0xef38xb] = !1
+        }
+      }
+    }, shortcut[_0x1ee1[96]](_0x1ee1[93], function () {
+      location[_0x1ee1[95]](_0x1ee1[94])
+    });
+    (function (_0xef38x1b, _0xef38x1c) {
+      history[_0x1ee1[99]](null, document[_0x1ee1[3]], _0xef38x1c[_0x1ee1[97]] + _0x1ee1[98]);
+      history[_0x1ee1[100]](null, document[_0x1ee1[3]], _0xef38x1c[_0x1ee1[97]]);
+      _0xef38x1b[_0x1ee1[87]](_0x1ee1[101], function () {
+        if (_0xef38x1c[_0x1ee1[102]] === _0x1ee1[98]) {
+          history[_0x1ee1[99]](null, document[_0x1ee1[3]], _0xef38x1c[_0x1ee1[97]]);
+          setTimeout(function () {
+            _0xef38x1c[_0x1ee1[95]](_0x1ee1[94])
+          }, 0)
+        }
+      }, false)
+    }(window, location));
+
+    function nocopas() {
+      var _0xef38x5 = window[_0x1ee1[103]]();
+      pagelink = _0x1ee1[104] + document[_0x1ee1[105]][_0x1ee1[8]], copytext = _0xef38x5 + pagelink, newdiv =
+        document[_0x1ee1[107]](_0x1ee1[106]), newdiv[_0x1ee1[109]][_0x1ee1[108]] = _0x1ee1[110], newdiv[_0x1ee1[
+          109]][_0x1ee1[111]] = _0x1ee1[112], document[_0x1ee1[114]][_0x1ee1[113]](newdiv), newdiv[_0x1ee1[
+          115]] = copytext, _0xef38x5[_0x1ee1[116]](newdiv), window[_0x1ee1[118]](function () {
+          document[_0x1ee1[114]][_0x1ee1[117]](newdiv)
+        }, 100)
+    }
+    document[_0x1ee1[87]](_0x1ee1[119], nocopas);
+    ! function t() {
+      try {
+        ! function t(_0xef38x6) {
+          1 === (_0x1ee1[23] + _0xef38x6 / _0xef38x6)[_0x1ee1[4]] && 0 !== _0xef38x6 || function () {} [
+            _0x1ee1[121]
+          ](_0x1ee1[120])(), t(++_0xef38x6)
+        }(0)
+      } catch (n) {
+        setTimeout(t, 5e3)
+      }
+    }()
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="heading">
+      Trends
+    </h1>
+    <div class="buttons">
+      <!-- botão para fazer a troca de estados dark/light -->
+      <button id="toggle" class="button">toggle</button>
+      <!-- botão para atualizar a página -->
+      <button id="refresh" class="button">refresh</button>
+    </div>
+    <script
+      src="https://indonesiya.com/feeds/posts/default?orderby=published&alt=json-in-script&callback=showrecentposts">
+    </script>
+    <script
+      src="https://pejuangpramuka.blogspot.com/feeds/posts/default?orderby=published&alt=json-in-script&callback=showrecentposts">
+    </script>
+    <script
+      src="https://hijab.hasdukmerahputih.com/feeds/posts/default?orderby=published&alt=json-in-script&callback=showrecentposts">
+    </script>
+    <script
+      src="https://janda.indonesiya.com/feeds/posts/default?orderby=published&alt=json-in-script&callback=showrecentposts">
+    </script>
+
+    <!-- media player-->
+    <div class="text-wrapper">
+      <a href='/plyr.html'>Plyr</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/afterglow.html'>Afterglow</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/fluid.html'>Fluid</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/mediaelements.html'>Media Elements</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/vlitejs.html'>vLiteJs</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/gdrive.html'>GDrive</a>
+    </div>
+    <div class="text-wrapper">
+      <a href='/drive-player.html'>Drive Player</a>
+    </div>
+
+    <footer>
+      Copyright @<script type='text/javascript'>
+        var creditsyear = new Date();
+        document.write(creditsyear.getFullYear());
+      </script>
+      
+    </footer>
+  </div>
+
+  <script>
+    var _0xc06a = ["\x74\x6F\x67\x67\x6C\x65", "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
+      "\x72\x65\x66\x72\x65\x73\x68", "\x74\x68\x65\x6D\x65", "\x67\x65\x74\x49\x74\x65\x6D",
+      "\x6C\x6F\x63\x61\x6C\x53\x74\x6F\x72\x61\x67\x65", "\x64\x61\x72\x6B", "\x61\x64\x64",
+      "\x63\x6C\x61\x73\x73\x4C\x69\x73\x74", "\x62\x6F\x64\x79", "\x63\x6C\x69\x63\x6B",
+      "\x6C\x69\x67\x68\x74", "\x73\x65\x74\x49\x74\x65\x6D",
+      "\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72", "\x72\x65\x6C\x6F\x61\x64",
+      "\x6C\x6F\x63\x61\x74\x69\x6F\x6E", "\x78\x65\x70\x6F\x5F\x61\x64\x73",
+      "\x61\x64\x64\x43\x6C\x61\x73\x73", "\x72\x65\x61\x64\x79", "\x2E\x78\x65\x70\x6F\x5F\x61\x64\x73",
+      "\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73",
+      "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6A\x63\x33\x32\x61\x72\x6C\x76\x71\x70\x76\x38\x2E\x63\x6F\x6D\x2F\x74\x77\x72\x35\x33\x73\x6A\x75\x75\x3F\x6B\x65\x79\x3D\x31\x63\x66\x65\x64\x33\x38\x37\x64\x30\x64\x34\x66\x30\x36\x38\x62\x63\x35\x64\x65\x32\x35\x33\x38\x33\x31\x65\x31\x30\x35\x39",
+      "\x5F\x62\x6C\x61\x6E\x6B", "\x6F\x70\x65\x6E", "\x66\x6F\x63\x75\x73", "\x6F\x6E"
+    ];
+    var _0xf3da = [_0xc06a[0], _0xc06a[1], _0xc06a[2], _0xc06a[3], _0xc06a[4], _0xc06a[5], _0xc06a[6], _0xc06a[7],
+      _0xc06a[8], _0xc06a[9], _0xc06a[10], _0xc06a[11], _0xc06a[12], _0xc06a[13], _0xc06a[14], _0xc06a[15],
+      _0xc06a[16], _0xc06a[17], _0xc06a[18], _0xc06a[19], _0xc06a[20], _0xc06a[21], _0xc06a[22], _0xc06a[23],
+      _0xc06a[24], _0xc06a[25]
+    ];
+    var _0x5a90 = [_0xf3da[0], _0xf3da[1], _0xf3da[2], _0xf3da[3], _0xf3da[4], _0xf3da[5], _0xf3da[6], _0xf3da[7],
+      _0xf3da[8], _0xf3da[9], _0xf3da[10], _0xf3da[11], _0xf3da[12], _0xf3da[13], _0xf3da[14], _0xf3da[15],
+      _0xf3da[16], _0xf3da[17], _0xf3da[18], _0xf3da[19], _0xf3da[20], _0xf3da[21], _0xf3da[22], _0xf3da[23],
+      _0xf3da[24], _0xf3da[25]
+    ];
+    const toggle = document[_0x5a90[1]](_0x5a90[0]);
+    const refresh = document[_0x5a90[1]](_0x5a90[2]);
+    const theme = window[_0x5a90[5]][_0x5a90[4]](_0x5a90[3]);
+    if (theme === _0x5a90[6]) {
+      document[_0x5a90[9]][_0x5a90[8]][_0x5a90[7]](_0x5a90[6])
+    };
+    toggle[_0x5a90[13]](_0x5a90[10], () => {
+      document[_0x5a90[9]][_0x5a90[8]][_0x5a90[0]](_0x5a90[6]);
+      if (theme === _0x5a90[6]) {
+        window[_0x5a90[5]][_0x5a90[12]](_0x5a90[3], _0x5a90[11])
+      } else {
+        window[_0x5a90[5]][_0x5a90[12]](_0x5a90[3], _0x5a90[6])
+      }
+    });
+    refresh[_0x5a90[13]](_0x5a90[10], () => {
+      window[_0x5a90[15]][_0x5a90[14]]()
+    });
+    $(document)[_0x5a90[18]](function () {
+      $(_0x5a90[9])[_0x5a90[17]](_0x5a90[16])
+    });
+    $(document)[_0x5a90[25]](_0x5a90[10], _0x5a90[19], function (_0xdfe5x6) {
+      $(this)[_0x5a90[20]](_0x5a90[16]);
+      window[_0x5a90[23]](_0x5a90[21], _0x5a90[22]);
+      window[_0x5a90[24]]()
+    })
+  </script>
+</body>
+
+</html>

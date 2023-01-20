@@ -1,0 +1,87 @@
+<style type="text/css">
+  *,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<!-- Docs styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CDNSFree2/Plyr/plyr.css" />
+
+<!--Add a Simple HTML5 Video tag-->
+<div id="container">
+  <video controls poster="https://player.aridjaya.com/assets/img/sample.jpg" id="vid1">
+    <!-- Video files -->
+    <source src="/assets/video/caminandes.mp4" type="video/mp4" size="576" />
+  </video>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.7/plyr.min.js"></script>
+
+<script>
+  var controls = [
+    'play-large', // The large play button in the center
+    // 'restart', // Restart playback
+    // 'rewind', // Rewind by the seek time (default 10 seconds)
+    'play', // Play/pause playback
+    'fast-forward', // Fast forward by the seek time (default 10 seconds)
+    'progress', // The progress bar and scrubber for playback and buffering
+    'current-time', // The current time of playback
+    'duration', // The full duration of the media
+    'mute', // Toggle mute
+    'volume', // Volume control
+    'captions', // Toggle captions
+    'settings', // Settings menu
+    'pip', // Picture-in-picture (currently Safari only)
+    'airplay', // Airplay (currently Safari only)
+    //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+    'fullscreen' // Toggle fullscreen
+  ];
+
+  const player = new Plyr('#vid1', {
+    controls
+  });
+</script>
+
+<style>
+  :root {
+    --plyr-color-main: #e657ff;
+    --plyr-video-control-color: #e8ffba;
+  }
+</style>
+
+<script>
+  var _0x7db6 = [
+    "\x41\x49\x7A\x61\x53\x79\x44\x33\x76\x49\x6B\x67\x43\x7A\x35\x4A\x5A\x6E\x31\x35\x68\x63\x39\x52\x77\x32\x52\x48\x49\x36\x38\x47\x6B\x67\x4C\x7A\x2D\x61\x38",
+    "\x68\x72\x65\x66", "\x6C\x6F\x63\x61\x74\x69\x6F\x6E", "\x67\x65\x74",
+    "\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61\x6D\x73", "\x76\x69\x64\x31",
+    "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64", "\x69\x64", "\x70\x61\x72\x73\x65", "\x73\x72\x63",
+    "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x67\x6F\x6F\x67\x6C\x65\x61\x70\x69\x73\x2E\x63\x6F\x6D\x2F\x64\x72\x69\x76\x65\x2F\x76\x33\x2F\x66\x69\x6C\x65\x73\x2F",
+    "\x3F\x61\x6C\x74\x3D\x6D\x65\x64\x69\x61\x26\x6B\x65\x79\x3D", "", "\x70\x6F\x73\x74\x65\x72",
+    "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6C\x68\x33\x2E\x67\x6F\x6F\x67\x6C\x65\x75\x73\x65\x72\x63\x6F\x6E\x74\x65\x6E\x74\x2E\x63\x6F\x6D\x2F\x64\x2F"
+  ];
+  var _0x2058 = [_0x7db6[0], _0x7db6[1], _0x7db6[2], _0x7db6[3], _0x7db6[4], _0x7db6[5], _0x7db6[6], _0x7db6[7],
+    _0x7db6[8], _0x7db6[9], _0x7db6[10], _0x7db6[11], _0x7db6[12], _0x7db6[13], _0x7db6[14]
+  ];
+  var _0x9d52 = [_0x2058[0], _0x2058[1], _0x2058[2], _0x2058[3], _0x2058[4], _0x2058[5], _0x2058[6], _0x2058[7],
+    _0x2058[8], _0x2058[9], _0x2058[10], _0x2058[11], _0x2058[12], _0x2058[13], _0x2058[14]
+  ];
+  let apikey = _0x9d52[0];
+
+  function getparam(_0x46bdx5, _0x46bdx6) {
+    return _0x46bdx6 || (_0x46bdx6 = window[_0x9d52[2]][_0x9d52[1]]), new URL(_0x46bdx6)[_0x9d52[4]][_0x9d52[3]](
+      _0x46bdx5)
+  }
+  let video = document[_0x9d52[6]](_0x9d52[5]);
+  if (getparam(_0x9d52[7])) {
+    let json = JSON[_0x9d52[8]](atob(getparam(_0x9d52[7])));
+    let driveid = json[_0x9d52[7]];
+    video[_0x9d52[9]] =
+      `${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}${_0x9d52[10]}${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}${driveid}${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}${_0x9d52[11]}${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}${apikey}${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}${_0x9d52[12]}${_0x7db6[12]}${_0x2058[12]}${_0x7db6[12]}`;
+    video[_0x9d52[13]] = _0x9d52[14] + driveid
+  }
+</script>
+
+<script type='text/javascript' src='//deeperregardingcontend.com/bc/d8/a8/bcd8a84537fb752bf2edb073e7833d17.js'></script>
+<script type='text/javascript' src='//deeperregardingcontend.com/77/9d/18/779d18967e81f4574ca881cb9f970bf6.js'></script>

@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "player-indonesiya",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
