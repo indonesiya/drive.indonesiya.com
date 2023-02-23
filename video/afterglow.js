@@ -28,7 +28,7 @@ let getbase = () => {
 }
 
 let openafterglow = () => {
-  window.open('https://player.indonesiya.com/video/afterglow.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/afterglow.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
@@ -36,11 +36,11 @@ let pmsg = 'Copy Embed Code';
 let embedafterglow = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.indonesiya.com/video/afterglow.html?id=${base}" 
+src="https://drive.indonesiya.com/video/afterglow.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
 }
 let iframe = () => {
-  s('afterglow').src = 'https://player.indonesiya.com/video/afterglow.html?id=' + base;
+  s('afterglow').src = 'https://drive.indonesiya.com/video/afterglow.html?id=' + base;
 }
