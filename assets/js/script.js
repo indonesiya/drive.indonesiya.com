@@ -40,19 +40,19 @@ let getbase = () => {
 
 //Player Openers (diff. func. coding intentionally)
 let openplyr = () => {
-  window.open('https://player.aridjaya.com/video/plyr.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/plyr.html?id=' + base)
 }
 let openfluid = () => {
-  window.open('https://player.aridjaya.com/video/fluid.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/fluid.html?id=' + base)
 }
 let openafterglow = () => {
-  window.open('https://player.aridjaya.com/video/afterglow.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/afterglow.html?id=' + base)
 }
 let openmediaelements = () => {
-  window.open('https://player.aridjaya.com/video/mediaelements.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/mediaelements.html?id=' + base)
 }
 let openvlitejs = () => {
-  window.open('https://player.aridjaya.com/video/vlitejs.html?id=' + base)
+  window.open('https://drive.indonesiya.com/video/vlitejs.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
@@ -60,7 +60,7 @@ let pmsg = 'Copy Embed Code';
 let embedplyr = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/plyr.html?id=${base}" 
+src="https://drive.indonesiya.com/video/plyr.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
@@ -68,7 +68,7 @@ gyroscope; picture-in-picture" allowfullscreen>
 let embedfluid = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/fluid.html?id=${base}" 
+src="https://drive.indonesiya.com/video/fluid.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
@@ -76,7 +76,7 @@ gyroscope; picture-in-picture" allowfullscreen>
 let embedafterglow = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/afterglow.html?id=${base}" 
+src="https://drive.indonesiya.com/video/afterglow.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
@@ -84,7 +84,7 @@ gyroscope; picture-in-picture" allowfullscreen>
 let embedmediaelements = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/mediaelements.html?id=${base}" 
+src="https://drive.indonesiya.com/video/mediaelements.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
@@ -92,17 +92,17 @@ gyroscope; picture-in-picture" allowfullscreen>
 let embedvlitejs = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://player.aridjaya.com/video/vlitejs.html?id=${base}" 
+src="https://drive.indonesiya.com/video/vlitejs.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`);
 }
 
 let iframe = () => {
-  s('afterglow').src = 'https://player.aridjaya.com/video/afterglow.html?id=' + base;
-  s('fluid').src = 'https://player.aridjaya.com/video/fluid.html?id=' + base;
-  s('plyr').src = 'https://player.aridjaya.com/video/plyr.html?id=' + base;
-  s('vlitejs').src = 'https://player.aridjaya.com/video/vlitejs.html?id=' + base;
-  s('mediaelements').src = 'https://player.aridjaya.com/video/mediaelements.html?id=' + base;
+  s('afterglow').src = 'https://drive.indonesiya.com/video/afterglow.html?id=' + base;
+  s('fluid').src = 'https://drive.indonesiya.com/video/fluid.html?id=' + base;
+  s('plyr').src = 'https://drive.indonesiya.com/video/plyr.html?id=' + base;
+  s('vlitejs').src = 'https://drive.indonesiya.com/video/vlitejs.html?id=' + base;
+  s('mediaelements').src = 'https://drive.indonesiya.com/video/mediaelements.html?id=' + base;
 
 }
