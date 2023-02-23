@@ -7,13 +7,7 @@ let s = a => document.getElementById(a);
 function getIdFromUrl(url) {
   return url.match(/[-\w]{25,}/);
 }
-let apikey = 'AIzaSyCHWUFpWNS0hedAsA1Rx1Yunp_CfrbWVvs
-
-
-
-
-
-';
+let apikey = 'AIzaSyCHWUFpWNS0hedAsA1Rx1Yunp_CfrbWVvs';
 
 let get = () => {
   getbase();
