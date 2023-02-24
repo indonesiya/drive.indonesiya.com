@@ -140,18 +140,19 @@
     function randomPage() {
       return pages[Math.round(Math.random() * (pages.length - 1))];
     }
-    var delay = 10 * 1000;
     // xepo_ads
-    $(document).ready(function () {
-      $('body').addClass('xepo_ads');
-    });
+    function xepoAds() {
+      $(document).ready(function () {
+        $('body').addClass('xepo_ads');
+      });
+    }
     $(document).on('click', '.xepo_ads', function (e) {
       $(this).removeClass('xepo_ads');
       window.open(randomPage());
       window.focus();
-      setInterval(function () {
-        $('body').addClass('xepo_ads');
-      }, delay)
+      setTimeout(function () {
+        function xepoAds()
+      }, 10000)
     });
   </script>
 </body>
