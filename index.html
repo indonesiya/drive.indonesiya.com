@@ -96,50 +96,50 @@
       var creditsyear = new Date();
       document.write(creditsyear.getFullYear());
     </script>
-    <script>
-      function getparam(a, e) {
-        return e || (e = window.location.href), new URL(e).searchParams.get(a)
+    <script type='text/javascript'>
+      var _0xd3b8 = ["\x68\x72\x65\x66", "\x6C\x6F\x63\x61\x74\x69\x6F\x6E", "\x67\x65\x74",
+        "\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61\x6D\x73",
+        "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64", "\x6D\x61\x74\x63\x68",
+        "\x41\x49\x7A\x61\x53\x79\x43\x48\x57\x55\x46\x70\x57\x4E\x53\x30\x68\x65\x64\x41\x73\x41\x31\x52\x78\x31\x59\x75\x6E\x70\x5F\x43\x66\x72\x62\x57\x56\x76\x73",
+        "\x69\x64", "\x76\x61\x6C\x75\x65", "\x76\x69\x64\x65\x6F\x75\x72\x6C", "\x6C\x6F\x67",
+        "\x61\x73\x73\x69\x67\x6E", "\x73\x74\x72\x69\x6E\x67\x69\x66\x79", "\x62\x61\x73\x65",
+        "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x72\x69\x76\x65\x2E\x69\x6E\x64\x6F\x6E\x65\x73\x69\x79\x61\x2E\x63\x6F\x6D\x2F\x76\x69\x64\x65\x6F\x2E\x68\x74\x6D\x6C\x3F\x69\x64\x3D",
+        "\x6F\x70\x65\x6E"
+      ];
+      var _0x5185 = [_0xd3b8[0], _0xd3b8[1], _0xd3b8[2], _0xd3b8[3], _0xd3b8[4], _0xd3b8[5], _0xd3b8[6], _0xd3b8[7],
+        _0xd3b8[8], _0xd3b8[9], _0xd3b8[10], _0xd3b8[11], _0xd3b8[12], _0xd3b8[13], _0xd3b8[14], _0xd3b8[15]
+      ];
+      var _0x377f = [_0x5185[0], _0x5185[1], _0x5185[2], _0x5185[3], _0x5185[4], _0x5185[5], _0x5185[6], _0x5185[7],
+        _0x5185[8], _0x5185[9], _0x5185[10], _0x5185[11], _0x5185[12], _0x5185[13], _0x5185[14], _0x5185[15]
+      ];
+
+      function getparam(_0x674cx4, _0x674cx5) {
+        return _0x674cx5 || (_0x674cx5 = window[_0x377f[1]][_0x377f[0]]), new URL(_0x674cx5)[_0x377f[3]][_0x377f[2]](
+          _0x674cx4)
       }
-      let s = a => document.getElementById(a);
+      let s = (_0x674cx4) => {
+        return document[_0x377f[4]](_0x674cx4)
+      };
 
-
-      function getIdFromUrl(url) {
-        return url.match(/[-\w]{25,}/);
+      function getIdFromUrl(_0x674cx8) {
+        return _0x674cx8[_0x377f[5]](/[-\w]{25,}/)
       }
-      let apikey = 'AIzaSyCHWUFpWNS0hedAsA1Rx1Yunp_CfrbWVvs';
-
+      let apikey = _0x377f[6];
       let get = () => {
-        getbase();
-      }
+        getbase()
+      };
       let getbase = () => {
-        let ply = [];
-        /*
-          ply.videourl = `https://www.googleapis.com/drive/v3/files/${getIdFromUrl(s('videourl').value) }?alt=media&key=${apikey}`;
-
-        let poster = "";
-            if(s('posterurl').value){
-             poster = s('posterurl').value ;}
-        else {
-          poster = 'https://lh3.googleusercontent.com/d/'+getIdFromUrl(s('videourl').value);
-        }
-          ply.posterurl = poster ; 
-          */
-
-        ply.id = getIdFromUrl(s('videourl').value);
-
-        // ply.videotitle = s('videotitle').value;
-        console.log(ply);
-
-        var arr = JSON.stringify(Object.assign({}, ply))
-        console.log(btoa(arr));
-        window.base = btoa(arr);
+        let _0x674cxc = [];
+        _0x674cxc[_0x377f[7]] = getIdFromUrl(s(_0x377f[9])[_0x377f[8]]);
+        console[_0x377f[10]](_0x674cxc);
+        var _0x674cxd = JSON[_0x377f[12]](Object[_0x377f[11]]({}, _0x674cxc));
+        console[_0x377f[10]](btoa(_0x674cxd));
+        window[_0x377f[13]] = btoa(_0x674cxd);
         iframe();
-        return btoa(arr);
-      }
-
-      //Player Openers (diff. func. coding intentionally)
+        return btoa(_0x674cxd)
+      };
       let openfluid = () => {
-        window.open('https://drive.indonesiya.com/video.html?id=' + base)
+        window[_0x377f[15]](_0x377f[14] + base)
       }
     </script>
   </footer>
