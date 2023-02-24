@@ -43,13 +43,69 @@
     <div class="card">
       <div class="card-body">
         <p class="card-player">
-          <iframe id="fluid" scrolling="no" src="/video/fluid.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
+
+          <style type="text/css">
+            *,
+            body {
+              margin: 0;
+              padding: 0;
+            }
+          </style>
+          <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+          <video poster="https://drive.indonesiya.com/assets/img/sample.jpg" width="100%" id="video-id">
+            <source src="/assets/video/caminandes.mp4" type="video/mp4" />
+            <script>
+              var myFP = fluidPlayer(
+                'video-id', {
+                  "layoutControls": {
+                    "controlBar": {
+                      "autoHideTimeout": 3,
+                      "animated": true,
+                      "autoHide": true
+                    },
+                    "htmlOnPauseBlock": {
+                      "html": null,
+                      "height": null,
+                      "width": null
+                    },
+                    "autoPlay": false,
+                    "mute": false,
+                    "allowTheatre": true,
+                    "playPauseAnimation": true,
+                    "playbackRateEnabled": true,
+                    "allowDownload": false,
+                    "playButtonShowing": true,
+                    "fillToContainer": false,
+                    "posterImage": ""
+                  },
+                  "vastOptions": {
+                    "adList": [],
+                    "adCTAText": false,
+                    "adCTATextPosition": ""
+                  }
+                }
+              );
+            </script>
+            <script>
+              let apikey = 'AIzaSyCHWUFpWNS0hedAsA1Rx1Yunp_CfrbWVvs';
+
+              function getparam(a, e) {
+                return e || (e = window.location.href), new URL(e).searchParams.get(a)
+              }
+
+              let video = document.getElementById('video-id');
+              if (getparam('id')) {
+                let json = JSON.parse(atob(getparam('id')));
+                let driveid = json.id;
+                video.src = `https://www.googleapis.com/drive/v3/files/${driveid }?alt=media&key=${apikey}`;
+                video.poster = 'https://lh3.googleusercontent.com/d/' + driveid;
+              }
+            </script>
+
         </p>
         <!-- ads -->
         <div class="ads-banner">
-          
+
 
 
 
@@ -72,9 +128,9 @@ gyroscope; picture-in-picture" allowfullscreen>
       document.write(creditsyear.getFullYear());
     </script>
   </footer>
-  <script src="/video/fluid.js"></script>
-  
-  
+  <script src="/fluid.js"></script>
+
+
 
 
 
