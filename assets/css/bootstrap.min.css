@@ -12298,12 +12298,12 @@ footer {
 .ads-banner {
     text-align: center;
     overflow: hidden;
-    margin: 5px auto;
+    margin: 1em auto;
     max-width: 100%;
     display: inherit;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .ads-banner iframe {
-    border-radius: 5px;
+    border-radius: 3px;
 }
