@@ -5160,14 +5160,12 @@ fieldset:disabled .btn {
 }
 
 .card-player {
-    aspect-ratio: 16/9;
     background-color: #000;
 }
 
 .card-player iframe {
     width: -webkit-fill-available;
     max-width: 100%;
-    aspect-ratio: 16/9;
     height: auto;
 }
 
