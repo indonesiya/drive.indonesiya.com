@@ -5160,7 +5160,7 @@ fieldset:disabled .btn {
 }
 
 .card-player {
-    background-color: #000;
+    background-color: transparent;
 }
 
 .card-player iframe {
