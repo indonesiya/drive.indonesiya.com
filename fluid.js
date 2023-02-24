@@ -27,20 +27,22 @@ let getbase = () => {
   return btoa(arr);
 }
 
-let openafterglow = () => {
-  window.open('https://drive.indonesiya.com/video/afterglow.html?id=' + base)
+let openfluid = () => {
+  window.open('https://drive.indonesiya.com/fluid.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
 //Player Embedders
-let embedafterglow = () => {
+
+let embedfluid = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
-src="https://drive.indonesiya.com/video/afterglow.html?id=${base}" 
+src="https://drive.indonesiya.com/fluid.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
 }
+
 let iframe = () => {
-  s('afterglow').src = 'https://drive.indonesiya.com/video/afterglow.html?id=' + base;
+  s('fluid').src = 'https://drive.indonesiya.com/fluid.html?id=' + base;
 }
