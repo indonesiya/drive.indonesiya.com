@@ -39,32 +39,12 @@ let getbase = () => {
 }
 
 //Player Openers (diff. func. coding intentionally)
-let openplyr = () => {
-  window.open('https://drive.indonesiya.com/plyr.html?id=' + base)
-}
 let openfluid = () => {
-  window.open('https://drive.indonesiya.com/fluid.html?id=' + base)
-}
-let openafterglow = () => {
-  window.open('https://drive.indonesiya.com/afterglow.html?id=' + base)
-}
-let openmediaelements = () => {
-  window.open('https://drive.indonesiya.com/mediaelements.html?id=' + base)
-}
-let openvlitejs = () => {
-  window.open('https://drive.indonesiya.com/vlitejs.html?id=' + base)
+  window.open('https://drive.indonesiya.com/play.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
 //Player Embedders
-let embedplyr = () => {
-  prompt(pmsg, `<iframe width="560" height="315" 
-scrolling="no"
-src="https://drive.indonesiya.com/plyr.html?id=${base}" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>`)
-}
 let embedfluid = () => {
   prompt(pmsg, `<iframe width="560" height="315" 
 scrolling="no"
@@ -72,30 +52,6 @@ src="https://drive.indonesiya.com/fluid.html?id=${base}"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
-}
-let embedafterglow = () => {
-  prompt(pmsg, `<iframe width="560" height="315" 
-scrolling="no"
-src="https://drive.indonesiya.com/afterglow.html?id=${base}" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>`)
-}
-let embedmediaelements = () => {
-  prompt(pmsg, `<iframe width="560" height="315" 
-scrolling="no"
-src="https://drive.indonesiya.com/mediaelements.html?id=${base}" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>`)
-}
-let embedvlitejs = () => {
-  prompt(pmsg, `<iframe width="560" height="315" 
-scrolling="no"
-src="https://drive.indonesiya.com/vlitejs.html?id=${base}" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>`);
 }
 
 let iframe = () => {

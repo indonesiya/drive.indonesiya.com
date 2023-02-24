@@ -28,7 +28,7 @@ let getbase = () => {
 }
 
 let openfluid = () => {
-  window.open('https://drive.indonesiya.com/fluid.html?id=' + base)
+  window.open('https://drive.indonesiya.com/play.html?id=' + base)
 }
 
 let pmsg = 'Copy Embed Code';
